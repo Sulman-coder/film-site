@@ -15,6 +15,7 @@ const translations = {
     navStory: "The story",
     navGallery: "Gallery",
     navWatch: "Watch / Buy",
+    navDownload: "Download",
     navSupport: "Support",
 
     heroEyebrow: "A FILM BY CHRISTOPHER NOLAN",
@@ -76,6 +77,26 @@ const translations = {
     noDownloads:
       "This independent guide does not host or distribute the copyrighted film.",
 
+    downloadEyebrow: "FILMHAVEN · SECURE ACCESS",
+    downloadTitle: "Own the journey.<br><em>Return whenever you wish.</em>",
+    downloadCopy:
+      "Explore authorized purchase options for The Odyssey. Secure digital access will be available only after the payment system and download permissions have been verified.",
+    downloadButton: "View official options",
+    downloadNote:
+      "FilmHaven is an independent film information website. Availability depends on official providers and your region.",
+    downloadStepsTitle: "Your secure access journey",
+    downloadStep1: "Choose",
+    downloadStep1Text: "Select an authorized film edition.",
+    downloadStep2: "Pay securely",
+    downloadStep2Text:
+      "Complete checkout through the configured payment provider.",
+    downloadStep3: "Payment verified",
+    downloadStep3Text:
+      "The server confirms the transaction before granting access.",
+    downloadStep4: "Access your download",
+    downloadStep4Text:
+      "A temporary secure link is issued if authorized downloads are available.",
+
     quote:
       "The hardest distance is the one between who you were and who you become.",
     quoteCredit: "A STORY INSPIRED BY HOMER'S EPIC",
@@ -118,6 +139,7 @@ const translations = {
     navStory: "Het verhaal",
     navGallery: "Galerij",
     navWatch: "Kijken / Kopen",
+    navDownload: "Downloaden",
     navSupport: "Steunen",
 
     heroEyebrow: "EEN FILM VAN CHRISTOPHER NOLAN",
@@ -125,7 +147,8 @@ const translations = {
     genre: "MYTHOLOGISCH ACTIE-EPOS",
     explore: "Ontdek de film",
     trailer: "Officiële trailer",
-    heroFoot: "HOMERUS' LEGENDARISCHE VERHAAL · OPNIEUW VERTELD VOOR HET WITTE DOEK",
+    heroFoot:
+      "HOMERUS' LEGENDARISCHE VERHAAL · OPNIEUW VERTELD VOOR HET WITTE DOEK",
 
     detailsKicker: "DE FILM",
     detailsTitle: "Een mythe die<br><em>door de tijd reist.</em>",
@@ -178,6 +201,26 @@ const translations = {
     findEditions: "Bekijk officiële edities",
     noDownloads:
       "Deze onafhankelijke gids host of verspreidt de auteursrechtelijk beschermde film niet.",
+
+    downloadEyebrow: "FILMHAVEN · VEILIGE TOEGANG",
+    downloadTitle: "Beleef de reis.<br><em>Keer altijd terug.</em>",
+    downloadCopy:
+      "Ontdek geautoriseerde aankoopopties voor The Odyssey. Veilige digitale toegang is pas beschikbaar nadat het betalingssysteem en de downloadrechten zijn gecontroleerd.",
+    downloadButton: "Bekijk officiële opties",
+    downloadNote:
+      "FilmHaven is een onafhankelijke website met filminformatie. De beschikbaarheid hangt af van officiële aanbieders en uw regio.",
+    downloadStepsTitle: "Uw veilige toegangsproces",
+    downloadStep1: "Kies",
+    downloadStep1Text: "Selecteer een geautoriseerde filmversie.",
+    downloadStep2: "Betaal veilig",
+    downloadStep2Text:
+      "Rond de betaling af via de ingestelde betaaldienst.",
+    downloadStep3: "Betaling gecontroleerd",
+    downloadStep3Text:
+      "De server controleert de transactie voordat toegang wordt verleend.",
+    downloadStep4: "Download openen",
+    downloadStep4Text:
+      "Er wordt een tijdelijke beveiligde link verstrekt als downloads zijn toegestaan.",
 
     quote:
       "De moeilijkste afstand is die tussen wie je was en wie je wordt.",
@@ -249,12 +292,13 @@ function setLanguage(language) {
 
   updateWallet();
 
-  const menuToggle = document.querySelector(".menu-toggle");
+  const currentMenuToggle = document.querySelector(".menu-toggle");
+  const currentNavigation = document.querySelector(".nav");
 
-  if (menuToggle) {
-    menuToggle.setAttribute(
+  if (currentMenuToggle) {
+    currentMenuToggle.setAttribute(
       "aria-label",
-      document.querySelector(".nav")?.classList.contains("open")
+      currentNavigation?.classList.contains("open")
         ? dictionary.menuClose
         : dictionary.menuOpen
     );
@@ -372,7 +416,7 @@ if (privacyLink) {
   privacyLink.addEventListener("click", (event) => {
     const href = privacyLink.getAttribute("href");
 
-    // Keep this message until a real privacy page is connected.
+    // Show a message until a real privacy page is connected.
     if (href === "#privacy") {
       event.preventDefault();
 
@@ -389,8 +433,8 @@ if (privacyLink) {
 /*
   IMPORTANT:
   Wallet addresses are intentionally empty.
-  The site owner must add and verify the correct
-  addresses and networks before accepting donations.
+  Add and verify the correct wallet addresses and networks
+  before accepting donations.
 */
 
 const walletAddresses = {
@@ -447,7 +491,7 @@ if (copyWalletButton) {
 
       showToast(translations[currentLanguage].copied);
     } catch (error) {
-      // Fallback for browsers where Clipboard API is unavailable.
+      // Fallback for browsers without Clipboard API access.
       try {
         const temporaryInput = document.createElement("textarea");
 

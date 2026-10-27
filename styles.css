@@ -721,3 +721,92 @@ blockquote {
   color: #f5f1e8;
 }
  
+
+
+
+
+
+/* FilmHaven secure download section */
+.download-section {
+  padding-top: 80px;
+  padding-bottom: 100px;
+}
+
+.download-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  gap: clamp(30px, 6vw, 80px);
+  align-items: center;
+  padding: clamp(25px, 5vw, 64px);
+  border: 1px solid rgba(200, 169, 107, 0.3);
+  background:
+    radial-gradient(ellipse at top right, rgba(200, 169, 107, 0.12), transparent 45%),
+    #111419;
+}
+
+.download-copy {
+  min-width: 0;
+}
+
+.download-eyebrow {
+  color: var(--gold);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.download-copy h2 {
+  margin: 20px 0;
+}
+
+.download-copy > p:not(.download-eyebrow) {
+  max-width: 570px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.download-copy .button {
+  margin-top: 18px;
+}
+
+.download-note {
+  font-size: 12px;
+}
+
+.download-steps {
+  padding: 25px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.download-steps h3 {
+  margin: 0 0 22px;
+  font: 500 25px/1.3 var(--display);
+}
+
+.download-step {
+  display: flex;
+  gap: 17px;
+  padding: 17px 0;
+  border-top: 1px solid var(--line);
+}
+
+.download-step > span {
+  color: var(--gold);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+}
+
+.download-step strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.download-step p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+

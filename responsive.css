@@ -246,3 +246,32 @@
     font-size: 13px;
   }
 }
+
+
+
+
+
+@media (max-width: 760px) {
+  .download-section {
+    padding: 55px 6%;
+  }
+
+  .download-panel {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 24px 18px;
+  }
+
+  .download-steps {
+    padding: 20px 15px;
+  }
+
+  .download-steps h3 {
+    font-size: 22px;
+  }
+
+  .download-copy .button {
+    width: 100%;
+    gap: 12px;
+  }
+}
