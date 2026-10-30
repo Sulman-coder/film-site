@@ -1,7 +1,7 @@
 :root {
   --bg: #e8ebef;
   --panel: #f1f3f5;
-  --text: #252d3a;
+  --text:#252d3a ;
   --muted: #626d7d;
   --gold: #92733b;
   --line: rgba(37, 45, 58, 0.16);
@@ -279,6 +279,8 @@ h2 em {
 
 .button b {
   font-size: 16px;
+  color: var(--gold);
+
 }
 
 .button-gold {
@@ -1061,4 +1063,15 @@ blockquote {
   .download-steps {
     padding: 18px;
   }
+}
+
+
+
+
+.site-header .brand > span:nth-child(2) {
+  color: #92733b !important;
+}
+
+.site-header .brand > span:nth-child(2) b {
+  color: #111318 !important;
 }

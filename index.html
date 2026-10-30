@@ -85,12 +85,27 @@
     ]
   }
   </script>
+<style>
+header.site-header a.brand > span:nth-child(2) > span.brand-the {
+    color: #d4af37 !important;
+    -webkit-text-fill-color: #d4af37 !important;
+}
+</style>
+
 </head>
 
 <body>
   <div class="grain" aria-hidden="true"></div>
   <header class="site-header">
-    <a class="brand" href="#home" aria-label="Odyssey home"><span class="brand-mark">O</span><span>THE <b>ODYSSEY</b><small>AN INDEPENDENT FILM GUIDE</small></span></a>
+    <a class="brand" href="#home" aria-label="Odyssey home">
+  <span class="brand-mark">O</span>
+  <span>
+    <!-- <span class="brand-the">THE</span> -->
+    <b>ODYSSEY</b>
+    <small>AN INDEPENDENT FILM GUIDE</small>
+  </span>
+</a>
+    <!-- <a class="brand" href="#home" aria-label="Odyssey home"><span class="brand-mark">O</span><span>THE <b>ODYSSEY</b><small>AN INDEPENDENT FILM GUIDE</small></span></a> -->
     <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
     <nav class="nav" aria-label="Main navigation">
       <a href="#home" data-i18n="navHome">Home</a><a href="#details" data-i18n="navDetails">Film details</a><a href="#story" data-i18n="navStory">The story</a><a href="#gallery" data-i18n="navGallery">Gallery</a><a href="#watch" data-i18n="navWatch">Watch / Buy</a> <a href="#download">Download</a>  <a href="#support" data-i18n="navSupport">Support</a>
